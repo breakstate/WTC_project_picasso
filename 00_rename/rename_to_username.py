@@ -11,7 +11,7 @@ username = cfg.username
 source_dir = cfg.source_dir
 destination_dir = cfg.destination_dir
 file_extension = cfg.file_extension
-
+print "Make sure you have run ./setup.sh first or you won't have the correct file structure.\nRun ./cleanup.sh afterwards to clean out all created files (data will be lost!)\n\nThe newly created file in /unnamed will be renamed according to your input and moved to /named."
 print "Usage: Enter username in all lower case."
 
 while username != "n":
