@@ -33,9 +33,9 @@ if [ $v ]; then echo "copying images..."; fi
 cp -r "$directory" pics_normal
 if [ $v ]; then echo "images copied"; fi
 
-for file in pics_normal/*.JPG	#for every file ending in ".png" at the given file path
+for file in pics_normal/*.JPG	#for every file ending in ".JPG" at the given file path
 do	
-	convert "$file" -crop 1500x1500+2092+1228 "${file}"
+	convert "$file" -crop 2600x2600+1290+0 "${file}"
 	if [ $v ]; then echo "${file} cropped"; else printf "." -n; fi
 done
 echo ""

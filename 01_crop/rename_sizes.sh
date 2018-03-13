@@ -22,32 +22,40 @@ cp -r pics_normal pics_micro
 if [ $v ]; then echo "micro folder created!"; fi
 
 
+if [ $v ]; then echo "resizing normal_"; fi
+cd pics_large
+for file in *.JPG
+do
+    convert "$file" -resize 240x240 "$file"
+    mv "$file" "large_$file"
+done
+
 if [ $v ]; then echo "appending large_..."; fi
 cd pics_large
 for file in *.JPG
 do
-    mv "$file" "large_$file"
+    convert "$file" -resize 700x700 "large_$file"
 done
 
 if [ $v ]; then echo "appending medium_..."; fi
 cd ../pics_medium
 for file in *.JPG
 do
-    mv "$file" "medium_$file"
+    convert "$file" -resize 350x350 "medium_$file"
 done
 
 if [ $v ]; then echo "appending small_..."; fi
 cd ../pics_small
 for file in *.JPG
 do
-    mv "$file" "small_$file"
+    convert "$file" -resize 175x175 "small_$file"
 done
 
 if [ $v ]; then echo "appending micro_..."; fi
 cd ../pics_micro
 for file in *.JPG
 do
-    mv "$file" "micro_$file"
+    convert "$file" -resize 25x25 "micro_$file"
 done
 
 if [ $v ]; then echo "-rename script exit\n"; fi
